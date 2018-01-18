@@ -11,7 +11,7 @@ App({
 
     let extConfig = wx.getExtConfigSync ? wx.getExtConfigSync() : {};
     // extConfig.kid = 103;
-   extConfig.kid = 103;
+    extConfig.kid = 103;
     console.log(extConfig.kid)
     this.data.operator_id = extConfig.kid;
     this.data.operator_id = 103;
@@ -31,7 +31,21 @@ App({
     wx.playBackgroundAudio({
       dataUrl: dataUrl
     })
-
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res);
+        console.log(res.brand)
+        console.log(res.model)
+        console.log(res.pixelRatio)
+        console.log(res.windowWidth)
+        console.log(res.windowHeight)
+        console.log(res.language)
+        console.log(res.version)
+        console.log(res.platform)
+        wx.setStorageSync('brand', res.brand);
+        wx.setStorageSync('model', res.model)
+      }
+    })
     
 
     wx.getSystemInfo({
@@ -81,7 +95,7 @@ App({
                 typeof cb == "function" && cb(that.globalData.userInfo)
               }
             })
-          }        
+          }   
           
         }
       })
@@ -90,6 +104,7 @@ App({
   globalData:{
     userInfo:null
   },
+  
   onHide:function(){
     wx.pauseBackgroundAudio();
     wx.stopBackgroundAudio()

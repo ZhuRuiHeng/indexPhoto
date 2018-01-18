@@ -2,6 +2,7 @@
 //获取应用实例
 var app = getApp();
 var util = require("../../utils/util.js");
+var tunji = require('../../utils/tunji.js');
 Page({
   data: {
     background: wx.getStorageSync('background'),
@@ -12,6 +13,10 @@ Page({
   },
   onLoad: function (options) {
     console.log(options,"begin_answer");
+    // 统计
+    tunji.statistic();
+    tunji.fromPageData();
+    tunji.userEvent();
     
     wx.setNavigationBarColor({
       frontColor: '#ffffff',

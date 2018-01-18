@@ -1,4 +1,5 @@
 var utils = require("../../utils/util.js");
+var tunji = require('../../utils/tunji.js');
 //获取应用实例
 var app = getApp();
 Page({
@@ -15,6 +16,11 @@ Page({
   },
   onShow: function () {
     let that = this;
+    // 统计
+    tunji.statistic();
+    tunji.fromPageData();
+    tunji.userEvent();
+    
     //获取性别
     wx.request({
       url: app.data.apiurl + "api/is-set-gender?sign=" + wx.getStorageSync('sign') + '&operator_id=' + wx.getStorageSync("operator_id"),

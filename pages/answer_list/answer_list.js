@@ -1,4 +1,5 @@
 // pages/answer_list/answer_list.js
+var tunji = require('../../utils/tunji.js');
 var app = getApp();
 Page({
 
@@ -16,6 +17,10 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
+    // 统计
+    tunji.statistic();
+    tunji.fromPageData();
+    tunji.userEvent();
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
       backgroundColor: wx.getStorageSync('bgColor'),

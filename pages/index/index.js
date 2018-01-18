@@ -1,5 +1,7 @@
 var utils = require("../../utils/util.js");
+var tunji = require('../../utils/tunji.js');
 var app = getApp();
+import {md5} from '../../utils/md5.js';
 Page({
 
   /**
@@ -10,6 +12,7 @@ Page({
   },
 
   onLoad(options) {
+    console.log(tunji,'tunji');
     var scene = decodeURIComponent(options.scene);
     console.log(options);
     var uid = scene.split("-")[0];
@@ -26,6 +29,10 @@ Page({
         url: '../begin_answer/begin_answer?uid=' + uid + '&set_number=' + set_number + '&sex=' + gender,
       })
     }
+    // 统计
+    tunji.statistic();
+    tunji.fromPageData();
+    tunji.userEvent();
   },
   /**
    * 生命周期函数--监听页面显示 

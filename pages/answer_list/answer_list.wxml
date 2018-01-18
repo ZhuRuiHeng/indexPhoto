@@ -10,7 +10,7 @@
       <view class='title'>参考答案</view>
 
       <view class='tips tips1'>Tips：标红为回答错误</view>
-        <view class='tips tips2'>Tips：标蓝为回答正确</view>  
+        <view class='tips tips2'>Tips：标黄为回答正确</view>  
 
       <view class='item {{item.correct=="n"?"red":"blue"}}' wx:for="{{list}}" wx:key="{{idnex}}">
         <!--{{item.correct=="n"?"red1":"blue"}}  -->

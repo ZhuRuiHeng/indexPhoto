@@ -1,4 +1,5 @@
 // pages/search/search.js
+var tunji = require('../../utils/tunji.js');
 Page({
 
   /**
@@ -11,9 +12,13 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 生命周期函数--监听页面加载tunji
    */
   onLoad: function (options) {
+    // 统计
+    tunji.statistic();
+    tunji.fromPageData();
+    tunji.userEvent();
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
       backgroundColor: wx.getStorageSync('bgColor'),

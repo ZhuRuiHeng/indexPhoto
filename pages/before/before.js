@@ -1,5 +1,7 @@
 //index.js
 var utils = require("../../utils/util.js");
+import { md5 } from '../../utils/md5.js';
+var tunji = require('../../utils/tunji.js');
 //获取应用实例
 var app = getApp();
 
@@ -9,6 +11,11 @@ Page({
   },
   onLoad: function (options) {
     let that = this;
+    // 统计
+    tunji.statistic();
+    tunji.fromPageData();
+    tunji.userEvent();
+    
     console.log("options:", options);
     wx.setNavigationBarColor({
       frontColor: '#ffffff',

@@ -1,5 +1,6 @@
 // pages/certificate/certificate.js
 var app = getApp();
+var tunji = require('../../utils/tunji.js');
 Page({
 
   /**
@@ -20,6 +21,11 @@ Page({
       frontColor: '#ffffff',
       backgroundColor: wx.getStorageSync('bgColor'),
     })
+    // 统计
+    tunji.statistic();
+    tunji.fromPageData();
+    tunji.userEvent();
+    
     var that = this;
     var answerer_uid = options.answerer_uid;
     var set_number = options.set_number;

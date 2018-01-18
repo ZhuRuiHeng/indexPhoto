@@ -1,4 +1,5 @@
 // pages/more/more.js
+var tunji = require('../../utils/tunji.js');
 Page({
 
   /**
@@ -18,6 +19,10 @@ Page({
       frontColor: '#ffffff',
       backgroundColor: wx.getStorageSync('bgColor'),
     })
+    // 统计
+    tunji.statistic();
+    tunji.fromPageData();
+    tunji.userEvent();
   },
 
   /**

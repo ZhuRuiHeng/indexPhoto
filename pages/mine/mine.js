@@ -1,5 +1,6 @@
 // pages/mine/mine.js
 var utils = require("../../utils/util.js");
+var tunji = require('../../utils/tunji.js');
 var app = getApp();
 Page({
 
@@ -21,6 +22,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 统计
+    tunji.statistic();
+    tunji.fromPageData();
+    tunji.userEvent();
+    
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
       backgroundColor: wx.getStorageSync('bgColor'),

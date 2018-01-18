@@ -1,4 +1,5 @@
 // pages/subject/subject.js
+var tunji = require('../../utils/tunji.js');
 var app = getApp();
 Page({
 
@@ -32,6 +33,11 @@ Page({
       frontColor: '#ffffff',
       backgroundColor: wx.getStorageSync('bgColor'),
     })
+    // 统计
+    tunji.statistic();
+    tunji.fromPageData();
+    tunji.userEvent();
+    
     var that = this;
     // var set_number = options.set_number;
     // var pageSharecode = options.pageSharecode;

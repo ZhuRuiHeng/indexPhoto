@@ -1,5 +1,6 @@
 // pages/getCerti/getCerti.js
 var app = getApp();
+var tunji = require('../../utils/tunji.js');
 Page({
 
   /**
@@ -17,6 +18,11 @@ Page({
  
   onLoad: function (options) {
     console.log("options:", options);
+    // 统计
+    tunji.statistic();
+    tunji.fromPageData();
+    tunji.userEvent();
+    
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
       backgroundColor: wx.getStorageSync('bgColor'),

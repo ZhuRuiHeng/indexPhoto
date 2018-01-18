@@ -1,4 +1,5 @@
 // pages/answer/answer.js
+var tunji = require('../../utils/tunji.js');
 var app = getApp();
 Page({
 
@@ -23,7 +24,10 @@ Page({
     var uid = options.uid;
     var set_number = options.set_number;
     // scene = "532-28"
-    
+    // 统计
+    tunji.statistic();
+    tunji.fromPageData();
+    tunji.userEvent();
 
     that.setData({
       u_avatar: u_avatar,
