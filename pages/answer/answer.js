@@ -133,8 +133,17 @@ console.log("onload id",set_number,uid);
         }
       })
     }
-
-
+  },
+  redUrl(){
+    wx.navigateToMiniProgram({
+      appId: 'wx22c7c27ae08bb935',
+      path: 'pages/index/index',
+      envVersion: 'release',
+      success(res) {
+        // 打开成功
+        console.log(res);
+      }
+    })
   },
   answerSubject: function (e) {
     var that = this;

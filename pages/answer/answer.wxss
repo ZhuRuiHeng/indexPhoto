@@ -253,4 +253,15 @@ scroll-view{
   -webkit-animation: fadeInUpBig 0.5s forwards;
   animation: fadeInUpBig 0.5s forwards;
 }
-
+.zindex{
+  position: fixed;
+  right: 20rpx;
+  top: 30%;  
+  -webkit-transform: translateY(-50%,-50%);  
+  -ms-transform: translatYe(-50%,-50%);  
+  transform: translateY(-50%,-50%);  
+}
+.zindex image{
+  width: 140rpx;
+  height: 140rpx;
+}
