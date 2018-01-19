@@ -198,6 +198,9 @@ console.log("sign",sign);
           }
       } else if (that.data.question_type == 'diy'){// 如果是diy
         if (question.option_c) {
+          if (answer_arr[0].text){
+
+          }
           var _diy_question = {
             'title': question.title, 'option': { 'a': answer_arr[0].text, 'b': answer_arr[1].text, 'c': answer_arr[2].text}
           }
@@ -326,7 +329,7 @@ console.log("sign",sign);
     if (that.data.selftitle){
       question.title = that.data.selftitle;
     }
-    
+  
     let answer_arr = [
       { 'option': 'a', 'check': false, 'text': question.option_a },
       { 'option': 'b', 'check': false, 'text': question.option_b }];
@@ -334,6 +337,39 @@ console.log("sign",sign);
       var c = { 'option': 'c', "check": false, "text": question.option_c }
       answer_arr.push(c);
     }
+    if (title.length<1){
+      wx.showToast({
+        title: '题目不能为空',
+        icon: 'none'
+      })
+      return;
+    }
+    console.log('answer_arr:', answer_arr);
+    // console.log('length:', answer_arr.length);
+    // if (answer_arr.length == 2) {
+    //   for (var i = 0; i < answer_arr.length; i++) {
+    //     if (answer_arr[i].text.length < 1) {
+    //       console.log(answer_arr[i].text.length,'length')
+    //       wx.showToast({
+    //         title: '选项不能为空',
+    //         icon: 'none'
+    //       })
+    //       return;
+    //     }
+    //   }
+    // } else if (answer_arr.length == 3) {
+    //   for (var j = 0; j < answer_arr.length; j++) {
+    //     if (answer_arr[j].text.length < 1) {
+    //       console.log(answer_arr[j].text, 'length')
+    //       console.log(answer_arr[j].text.length, 'length')
+    //       wx.showToast({
+    //         title: '选项不能为空',
+    //         icon: 'none'
+    //       })
+    //       return;
+    //     }
+    //   }
+    // }
     // 1111  2222
     if (that.data.text1 && !that.data.text2){
       console.log(11111)
@@ -431,6 +467,7 @@ console.log("sign",sign);
     if (!that.data.text1 && !that.data.text2 && !that.data.text3) {
       answer_arr
     }
+    
 
     
     var selftitle = that.data.selftitle;

@@ -8,19 +8,23 @@ var app = getApp();
 Page({
   data: {
     showAd: true,
+    music_play:true
   },
   onLoad: function (options) {
     let that = this;
+    that.setData({
+      music_play: true
+    })
     // 统计
     tunji.statistic();
     tunji.fromPageData();
     tunji.userEvent();
-    
     console.log("options:", options);
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
-      backgroundColor: wx.getStorageSync('border'),
+      backgroundColor: '#000000',
     })
+
     if (wx.getStorageSync('sex')==1){
       wx.setNavigationBarColor({
         frontColor: '#ffffff',
@@ -38,6 +42,10 @@ Page({
         backgroundColor: '#e48599'
       })
     } else if (wx.getStorageSync('sex')==0){
+      wx.setNavigationBarColor({
+        frontColor: '#ffffff',
+        backgroundColor: '#000000',
+      })
     }
     
   },
@@ -46,8 +54,29 @@ Page({
     // wx.showLoading({
     //   title: '加载中',
     // });
-
     var that = this;
+    if (wx.getStorageSync('sex') == 1) {
+      wx.setNavigationBarColor({
+        frontColor: '#ffffff',
+        backgroundColor: '#73bce9',
+      })
+      that.setData({
+        backgroundColor: '#73bce9'
+      })
+    } else if (wx.getStorageSync('sex') == 2) {
+      wx.setNavigationBarColor({
+        frontColor: '#ffffff',
+        backgroundColor: '#e48599',
+      })
+      that.setData({
+        backgroundColor: '#e48599'
+      })
+    } else if (wx.getStorageSync('sex') == 0) {
+      wx.setNavigationBarColor({
+        frontColor: '#ffffff',
+        backgroundColor: '#000000',
+      })
+    }
     that.setData({
       background: wx.getStorageSync('background'),
       backgroundColor: wx.getStorageSync('border'),
@@ -114,7 +143,7 @@ Page({
         wx.setStorageSync('color', '#5fa0ca');
       }else if (sex == 2){
         that.setData({
-          background: 'http://ovhvevt35.bkt.clouddn.com/moqi/background.png',
+          background: 'http://p1jrmxejh.bkt.clouddn.com/moqi/bg1.png',
           bgColor: '#e48599',
           backgroundColor: '#e48599',
           border: '#d26c81',
@@ -122,7 +151,7 @@ Page({
           userIcon: 'http://ovhvevt35.bkt.clouddn.com/moqi/girl.png',
           color: '#e83656'
         })
-        wx.setStorageSync('background', 'http://ovhvevt35.bkt.clouddn.com/moqi/background.png');
+        wx.setStorageSync('background', 'http://p1jrmxejh.bkt.clouddn.com/moqi/bg1.png');
         wx.setStorageSync('bgColor', '#e48599');
         wx.setStorageSync('border', '#d26c81');
         wx.setStorageSync('userImg', 'http://ovhvevt35.bkt.clouddn.com/moqi/bgGail.png');
@@ -167,14 +196,14 @@ Page({
             wx.setStorageSync('color', '#5fa0ca');
           } else if (sex == 2) {
             that.setData({
-              background: 'http://ovhvevt35.bkt.clouddn.com/moqi/background.png',
+              background: 'http://p1jrmxejh.bkt.clouddn.com/moqi/bg1.png',
               bgColor: '#e48599',
               border: '#d26c81',
               userImg: 'http://ovhvevt35.bkt.clouddn.com/moqi/bgGail.png',
               userIcon: 'http://ovhvevt35.bkt.clouddn.com/moqi/girl.png',
               color: '#e83656'
             })
-            wx.setStorageSync('background', 'http://ovhvevt35.bkt.clouddn.com/moqi/background.png');
+            wx.setStorageSync('background', 'http://p1jrmxejh.bkt.clouddn.com/moqi/bg1.png');
             wx.setStorageSync('bgColor', '#e48599');
             wx.setStorageSync('border', '#d26c81');
             wx.setStorageSync('userImg', 'http://ovhvevt35.bkt.clouddn.com/moqi/bgGail.png');

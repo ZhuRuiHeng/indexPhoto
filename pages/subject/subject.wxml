@@ -6,7 +6,7 @@
     <!-- bounceInDown -->
       <view class='bgImg' style='background:{{backgroundColor}}'>
           <image style='background:{{backgroundColor}}' wx:if="{{sex==2}}" 
-                src="http://ovhvevt35.bkt.clouddn.com/moqi/hepulan.png" mode='widthFix'></image>
+                src="http://p1jrmxejh.bkt.clouddn.com/moqi/hepulannv.png" mode='widthFix'></image>
           <image style='background:{{backgroundColor}}' wx:if="{{sex==1}}" 
                 src="http://ovhvevt35.bkt.clouddn.com/moqi/hepulanb.png" mode='widthFix'></image>
       </view>
