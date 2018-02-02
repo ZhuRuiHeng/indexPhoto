@@ -73,10 +73,10 @@
           <button class="home_icon"  bindtap="backHome" wx:if="{{setOver == 'true'}}"> 
             <image src="../../resource/images/home_icon.png"></image>
           </button>
-          <button class="erwei_icon"  bindtap="shareImg" wx:else>
+          <!-- <button class="erwei_icon"  bindtap="shareImg" wx:else>
             <image wx:if="{{sex==1}}" src="../../resource/images/erweia.png"></image>
             <image wx:if="{{sex==2}}" src="../../resource/images/erwei.png"></image>
-          </button>
+          </button> -->
       </view>
       <button class="share_btn" open-type="share" bindtap="share" style='border:{{border}};background:{{backgroundColor}}'>
           发起挑战

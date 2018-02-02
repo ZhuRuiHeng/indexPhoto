@@ -51,6 +51,7 @@ Page({
   },
 
   onShow: function () {
+    console.log('set_number:', wx.getStorageSync('set_number'), 'uid:',wx.getStorageSync('uid'));
     var that = this;
     that.setData({
       background: wx.getStorageSync('background'),
@@ -234,8 +235,10 @@ console.log("sign",sign);
           }         
           var question = res.data.question;
           var set_number = question.set_number;
+          wx.setStorageSync('set_number', set_number);
           console.log(question.index);
           that.setData({
+            set_number: set_number,
             question_type: 'system',
             selftitle: '',
             text1: '',
@@ -689,6 +692,7 @@ console.log("sign",sign);
     var uid = wx.getStorageSync("uid");
     var set_number = wx.getStorageSync("set_number");
     console.log("用户分享",uid,set_number);
+    console.log('set_number:', wx.getStorageSync('set_number'), 'uid:', wx.getStorageSync('uid'));
     return {
       title: '' + wx.getStorageSync("nickName")+'邀请你参加默契检测，不服来战！',
       path: '/pages/begin_answer/begin_answer?uid=' + uid + "&set_number=" + set_number + "&sex=" + that.data.sex,

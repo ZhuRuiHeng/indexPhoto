@@ -82,13 +82,14 @@ App({
                 var sign = res.data.data.sign;
                 var uid = res.data.data.uid;
                 var sharecode = res.data.data.sharecode;
+                var set_number = res.data.data.set_number;
 
                 that.data.sign = sign;
                 that.data.uid = uid;
                 that.data.sharecode = sharecode;
                 wx.setStorageSync("sign", sign);
                 wx.setStorageSync("uid", uid);
-                
+                wx.setStorageSync("set_number", set_number);
                 var nickName = wx.getStorageSync("nickName");
                 var avatarUrl = wx.getStorageSync("avatarUrl");
               

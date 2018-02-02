@@ -141,7 +141,7 @@ Page({
     var nickname = wx.getStorageSync("nickName");
     var uid = that.data.uid;
     var set_number = that.data.set_number;
-console.log("跳转前",uid,set_number)
+console.log("跳转前now",uid,set_number)
     if (nickname && avatar) {
       wx.showLoading({
         title: '跳转中',

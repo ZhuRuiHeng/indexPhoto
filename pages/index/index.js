@@ -33,6 +33,7 @@ Page({
     tunji.statistic();
     tunji.fromPageData();
     tunji.userEvent();
+    app.getUserInfo(function () {})
   },
   /**
    * 生命周期函数--监听页面显示 

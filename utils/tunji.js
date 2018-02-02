@@ -7,7 +7,7 @@ function statistic(params={}) {
         SystemInfo.page = url,
         SystemInfo.sign = wx.getStorageSync('sign');
         SystemInfo.time = timestamp;
-        SystemInfo.app = 'moqidakaoyan';
+        SystemInfo.app = 'zhenjiaguimi'; //moqikaoyandazhan
         SystemInfo.token = md5('wKbYWC9fxCrwbiXHLNXXDufu#' + timestamp);
     params.data = SystemInfo;
     console.log('url',url)
@@ -47,7 +47,7 @@ function fromPageData(params={}) {
         is_fresh : wx.getStorageSync('is_fresh'),
         time : timestamp,
         token : md5('wKbYWC9fxCrwbiXHLNXXDufu#' + timestamp),
-        app : 'moqidakaoyan'
+        app : 'zhenjiaguimi'
     }
     wx.request({
         url: 'https://tj.zealcdn.cn/?_a_=serverReport',
@@ -71,7 +71,7 @@ function userEvent(params = {}) {
     params.time = timestamp;
     params.sign = wx.getStorageSync('sign');
     params.token = md5('wKbYWC9fxCrwbiXHLNXXDufu#' + timestamp);
-    params.app = 'moqidakaoyan'
+    params.app = 'zhenjiaguimi'
      wx.request({
          url: 'https://tj.zealcdn.cn/?_a_=clientEvent',
          data: params,

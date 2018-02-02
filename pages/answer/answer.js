@@ -14,6 +14,7 @@ Page({
    },
 
   onLoad: function (options) {
+    console.log('options:', options);
     wx.hideShareMenu({});
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
@@ -23,6 +24,7 @@ Page({
     var u_avatar = wx.getStorageSync("avatarUrl");
     var uid = options.uid;
     var set_number = options.set_number;
+    console.log('set_number:', set_number);
     // scene = "532-28"
     // 统计
     tunji.statistic();
@@ -63,7 +65,8 @@ console.log("onload id",set_number,uid);
     wx.showLoading({
       title: '加载中',
     })
-
+    console.log("set_number:", set_number);
+    console.log("uid:", uid);
     if (set_number && uid) {
       wx.request({
         url: app.data.apiurl + 'api/answer-question-by-uid' + '?operator_id=' + wx.getStorageSync("operator_id"),
